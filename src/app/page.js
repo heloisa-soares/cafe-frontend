@@ -83,9 +83,9 @@ useEffect(() => {
           <h2 className="text-3xl font-serif font-normal text-[#F9F8F6] tracking-wide">Nossos Cafés</h2>
         </div>
 
-        {loading ? (
+{loading ? (
           <p className="text-center text-[#8C857B] font-light">Buscando grãos selecionados...</p>
-        ) : products.length === 0 ? (
+        ) : !Array.isArray(products) || products.length === 0 ? (
           <p className="text-center text-[#8C857B] font-light">Nenhum café cadastrado no momento.</p>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
