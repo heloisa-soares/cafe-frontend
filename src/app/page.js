@@ -5,8 +5,8 @@ export default function Home() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    fetch('http://localhost:3000/api/products')
+useEffect(() => {
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/products`)
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);
